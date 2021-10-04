@@ -159,30 +159,41 @@ contract CommitmentPool
         uint256 _amount0 = (commitments[index]).trade.amount0;
         uint256 _amount1 = commitments[index].trade.amount1;
 
-        if (msg.sender == commitments[index].counterparty && !commitments[index].fulfiled) {
-
+        // counterparty logic
+        if (msg.sender == commitments[index].counterparty) {
+            // if not active
+            if (!commitments[index].active) {
+                //put in his position
                 commitments[index].active = true;
-
                 TransferHelper._safeTransferFrom(_token1, msg.sender, address(this), _amount1);    
-
-                //commitment
+                // take commitment
                 TransferHelper._safeTransfer(commitments[index].token, msg.sender, commitments[index].amount);
             }
-            // initiator put in his position and take counterparty's position
-            if (commitments[index].active && !commitments[index].fulfiled && msg.sender == commitments[index].initiator) {
 
-                commitments[index].fulfiled = true;
-                // transfer in his position
-                TransferHelper._safeTransferFrom(_token0, msg.sender, address(this), _amount0);       
-                // take counterparty's position
-                TransferHelper._safeTransfer(_token1, msg.sender, _amount1);
-                //commitment
-            }
-            // counterparty take initiator's position
-            if (msg.sender == commitments[index].counterparty && commitments[index].fulfiled && !commitments[index].completed) {
+                // if not completed but fulfiled, counterparty take initiator's position
+            if (commitments[index].fulfiled && !commitments[index].completed) {
+                require(commitments[index].active, "commitment not active");
                 commitments[index].completed = true;
                 TransferHelper._safeTransfer(_token0, address(this), _amount0);
             }
+            // initiator does not exercise after expiry; counterparty takes back his/her position
+            if (!commitments[index].fulfiled && !commitments[index].completed && commitments[index].expiry >= block.timestamp) {
+                commitments[index].completed = true;
+                TransferHelper._safeTransfer(_token1, address(this), _amount1);
+            }
+        }
+
+        // the only fulfilemennt is initiator put in his position and take counterparty's position
+        if (msg.sender == commitments[index].initiator) {
+            require(commitments[index].active, "counterparty not yet doposit, commitment not active");
+            require(!commitments[index].fulfiled, "commitment already fulfilled");
+            commitments[index].fulfiled = true;
+            // transfer in his position
+            TransferHelper._safeTransferFrom(_token0, msg.sender, address(this), _amount0);       
+            // take counterparty's position
+            TransferHelper._safeTransfer(_token1, msg.sender, _amount1);
+            }
+
         }
 
     function fulfil(uint256 index) external  {
