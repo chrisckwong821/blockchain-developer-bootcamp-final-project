@@ -35,8 +35,11 @@ This project runs on ScaffoldETH. To set it up:
 ## Accessing
 ---
 Go into `/package/`;
+
 `yarn chain` to start the local network; 
+
 `yarn deploy` to deploy the contracts with additional workflow defined in `/package/hardhat/deploy/*`; 
+
 `yarn start` to bring up a local frontend at port 3000
 ## Unit Tests:
 ---
