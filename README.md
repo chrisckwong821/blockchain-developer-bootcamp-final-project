@@ -1,17 +1,16 @@
-# blockchain-developer-bootcamp-final-project
-blockchain-developer-bootcamp-final-project
+<<<<<<< HEAD
+=======
+# 🏗 Online Betting Protocol
 
-A commitment system, where users can:
-1. indicate a pure commitment to another address
-2. indicate a commitement for an exchange of asset
-3. pay commitment for an exchange of asset (eqvialent to american options)
 
-Use Case:
-1. Reserve an IDO spot etc. The counterparty has an arbitration to decide whether to forfeit your commitment, use for screening out free-riders. 
-2. Block trade etc. The commitment is locked once the counterpart deposits his/her side of trade. If the trade is not settled before the expiry the commitment would be forfeited and transferred to the counterparty.
-3. Financial Options, the commitment is sent to the counterparty once he/she deposits his/her side of trade. The initiator has the option to settle the trade before the specified expiry time.
+![Screenshot 2021-11-06 at 10 03 37 PM](https://user-images.githubusercontent.com/16856703/141306704-798f782e-03fa-45cf-846d-7f2f6af46795.png)
 
-Scaffolding:
+> Bet with optimal fee, no chance of rugpull. 🚀
+
+
 ---
 
-`scaffolding.sol`
+🙏 Initially Project of Chainlink Hackathon 2021 Fall!
+
+Credit to Scaffold-ETH 
+>>>>>>> 15336c645a46dd1c99d1f504392002d7f795c08b
