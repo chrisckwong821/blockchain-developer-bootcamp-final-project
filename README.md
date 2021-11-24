@@ -105,6 +105,4 @@ in return for **3%** of the total betting fee received in the bettingOperator.
 
 
 
-If you want to contribute, you can checkout [master-based-scaffoldETH](https://github.com/chrisckwong821/obp/tree/master-based-scaffoldETH) for setting up a development environment.
-
 
