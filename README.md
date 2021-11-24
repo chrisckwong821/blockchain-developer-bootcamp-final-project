@@ -3,7 +3,7 @@ Consensys Final Project: Bet with optimal fee, no chance of rugpull.
 
 ##  Contracts deployed on Kovan Testnet
 ---
-Kovan:
+
 [OBPMain](https://kovan.etherscan.io/address/0xf5EF2883EDed5AcFBb7d76Da5744515D86d447c4#code)
 
 [OBPToken](https://kovan.etherscan.io/address/0x580Ca6a8eD65343623dDaB25e2Ad869f65de38DA#code)
