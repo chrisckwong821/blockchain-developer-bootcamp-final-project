@@ -25,6 +25,20 @@ Consensys Final Project: Bet with optimal fee, no chance of rugpull.
 ![Screenshot 2021-11-06 at 10 03 37 PM](https://user-images.githubusercontent.com/16856703/141306704-798f782e-03fa-45cf-846d-7f2f6af46795.png)
 
 
+
+## Installing dependencies
+---
+This project runs on ScaffoldETH. To set it up:
+1. Install ScaffoldETH following the instruction from [ScaffoldETH](https://docs.scaffoldeth.io/scaffold-eth/getting-started/installation)
+2. Git clone this repo; replace the directory "package" which is the main project directory
+
+## Accessing
+---
+Go into `/package/`; Then run `yarn chain` to start the local network; `yarn deploy` to deploy the contracts with additional workflow defined in `/package/hardhat/deploy/*`; `yarn start` to bring up a local frontend at port 3000
+## Unit Tests:
+---
+Run `yarn test` that runs the test scripts form `/package/hardhat/test/myTest.js`
+
 ## Introduction:
 ---
 OBP = Online Betting Protocol for everyone!
