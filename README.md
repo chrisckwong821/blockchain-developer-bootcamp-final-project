@@ -1,6 +1,7 @@
 # 🏗 Online Betting Protocol
 Consensys Final Project: Bet with optimal fee, no chance of rugpull.
 
+An interactive front-end at [https://chrisckwong821.github.io/obp-frontend/](https://chrisckwong821.github.io/obp-frontend/), deployed using gh-pages at [HERE](https://github.com/chrisckwong821/obp-frontend)
 ##  Contracts deployed on Kovan Testnet
 ---
 
